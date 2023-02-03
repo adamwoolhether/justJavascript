@@ -3,9 +3,19 @@ We can think of values as "floating" in our JS universe. They're not existing _i
 but we can refer to them from our code.
 
 Two main categories: _Primitive Values_ and _Objects & Functions_. In total, there are nin separate types.  
+* Booleans
+* Numbers
+* BigInts
+* Strings
+* Symbols
+* Objects
+* Functions
+
 Lonely values:
 * `null` is the only value of `Null` type.
 * `underfined` is the only value of the `Undefined` type.
+
+Interesting, there is an old, unfixable bug in JS. Type `console.log(typeof(mull));` to find out!
 
 ## Primitive Values
 Primitive values can be pointed to, but not created, destroyed, or modified.

@@ -51,5 +51,45 @@ Expressions are questions that JS can answer, and it answers those questions wit
 ```javascript
 console.log(2 + 2); // 4
 console.log(typeof(2)); // "number"
+```
 
+# Values and Variables
+Analyze this code snippet and say what I expect it to do:
+```javascript
+let reaction = 'yikes';
+reaction[0] = 'l';
+console.log(reaction);
+```
+Assign a string `yikes` to var `reaction`.  
+Mutate first char in string (Aren't **primitive values immutable**???)  
+Will either print `likes` or given an error when we try to mutate `reaction`.  
+RESULT: No error, but as expected, the var in not mutable!!
+
+## Primitive Values are Immutable
+Although we can access an index of primitive vals, like `reaction` above, we can't mutate them, as they're not an array(which aren't primitive).
+
+The below code wont' actually mutate the value. Whether an it silently refuses or throws an error depends on whether [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) is enabled or not.
+```javascript
+let fifty = 50;
+fifty.shades = 'gray'; // No!
+```
+
+## Variable and Values
+```javascript
+let pet = 'Narwhal';
+pet = 'The Kraken';
+console.log(pet); // ?
+```
+This snippet will work, because we're not mutating the string, we're simply re-assigning a new value to `pet`.
+
+## Variables are Wires
+You can think of a variable as a wire that connects to a value.
+
+### Rules of Assignment
+1. The left side of an assignment must be a "wire", ie, the `pet` variable.
+2. The right side must be an expression, always resulting in a value.
+
+### Reading Values of Variables
+```javascript
+console.log(pet);
 ```

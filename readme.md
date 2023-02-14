@@ -286,3 +286,56 @@ console.log(typeof(alohomora)); // "symbol"
 ```
 
 # Objects and Functions
+These are types that let us make our own values.
+
+## Objects
+Includes arrays, dates, regex, etc.:
+```js
+console.log(typeof({})); // "object"
+console.log(typeof([])); // "object"
+console.log(typeof(new Date())); // "object"
+console.log(typeof(/\d+/)); // "object"
+console.log(typeof(Math)); // "object"
+```
+
+Objects are **not** primitive values, and are therefore mutable. Properties can be accessed with dot `.` or bracket `[]` notation:
+```js
+let rapper = { name: 'Malicious' };
+rapper.name = 'Malice'; // Dot notation
+rapper['name'] = 'No Malice'; // Bracket notation
+```
+
+### Making Our Own Objects
+We can make new objects with the bracket literal: `{}`.
+```js
+let shrek = {};
+let donkey = {};
+```
+
+Because JS is a GC language, we can't explicitly "destroy" an object.
+```js
+let junk = {};
+junk = null; // Doesn't really "destry" the object.
+```
+
+Functions in JS are first-class objects, we can assign them to a var. The below code will print out seven unique object values:
+```js
+for (let i = 0; i < 7; i++) {
+  console.log({});
+}
+```
+
+### Calling a Function
+Guess what this prints:
+```js
+let countDwarves = function() { return 7; };
+let dwarves = countDwarves;
+console.log(dwarves); // ƒ () {return 7;}
+```
+Note that the above snippet doesn't actually call the function, it points `dwarves` to the function.  
+But this does, it points `dwarves` to the values that `countDwarves` returns:
+```js
+let countDwarves = function() { return 7; };
+let dwarves = countDwarves(); // () is a function call
+console.log(dwarves); // 7
+```

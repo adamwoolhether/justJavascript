@@ -284,3 +284,5 @@ Symbols allow hiding information inside an object and controlling which parts of
 let alohomora = Symbol();
 console.log(typeof(alohomora)); // "symbol"
 ```
+
+# Objects and Functions
